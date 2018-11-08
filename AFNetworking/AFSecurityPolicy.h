@@ -39,6 +39,7 @@ typedef NS_ENUM(NSUInteger, AFSSLPinningMode) {
  */
 
 NS_ASSUME_NONNULL_BEGIN
+//这个宏是 将下班的所有属性加上NONNULL
 
 @interface AFSecurityPolicy : NSObject <NSSecureCoding, NSCopying>
 
@@ -127,6 +128,20 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (BOOL)evaluateServerTrust:(SecTrustRef)serverTrust
                   forDomain:(nullable NSString *)domain;
+
+/*
+ 
+ 先研究下这个定义
+ SecTrustRef
+ --
+ typedef struct CF_BRIDGED_TYPE(id) __SecTrust *SecTrustRef;
+ ---
+ ++#define CF_BRIDGED_TYPE(T)        __attribute__((objc_bridge(T)))
+ 
+ 这里的objc_bridge具体含义是什么还没有看到文档，一篇blog说是
+ 是告诉编译器，在转换成OC对象时，只能转换成类型T
+ 
+ */
 
 @end
 
