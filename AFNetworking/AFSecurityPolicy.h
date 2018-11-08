@@ -34,6 +34,10 @@ typedef NS_ENUM(NSUInteger, AFSSLPinningMode) {
  Adding pinned SSL certificates to your app helps prevent man-in-the-middle attacks and other vulnerabilities. Applications dealing with sensitive customer data or financial information are strongly encouraged to route all communication over an HTTPS connection with SSL pinning configured and enabled.
  */
 
+/*
+ 这个类主要是解决HTTPS 证书问题，包括自制证书
+ */
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AFSecurityPolicy : NSObject <NSSecureCoding, NSCopying>

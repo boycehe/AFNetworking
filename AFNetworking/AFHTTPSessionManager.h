@@ -31,6 +31,10 @@
 #import <CoreServices/CoreServices.h>
 #endif
 
+/*
+ 以上宏皆是系统适配，以后不在说明
+ */
+
 #import "AFURLSessionManager.h"
 
 /**
